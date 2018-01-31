@@ -1089,8 +1089,8 @@ CXXFLAGS      += -fpermissive -fno-exceptions $(CXXFLAGS_STD)
 ASFLAGS       += -x assembler-with-cpp
 ifeq ($(shell expr $(CC_VERNUM) '>' 490), 1)
     ASFLAGS  += -flto
-    CXXFLAGS += -fno-threadsafe-statics -flto -fno-devirtualize -fdiagnostics-color
-    CFLAGS   += -flto -fno-fat-lto-objects -fdiagnostics-color
+    CXXFLAGS += -fno-threadsafe-statics -flto -fno-devirtualize
+    CFLAGS   += -flto -fno-fat-lto-objects
 endif
 LDFLAGS       += -$(MCU_FLAG_NAME)=$(MCU) -Wl,--gc-sections -O$(OPTIMIZATION_LEVEL)
 ifeq ($(shell expr $(CC_VERNUM) '>' 490), 1)
